@@ -10,13 +10,13 @@ Bu proje, Arduino kullanarak 6 adet LED ile çeşitli dans efektleri oluşturur.
 - Jumper kablolar
 
 ## Bağlantılar
-LED'ler sırayla şu pinlere bağlanmalıdır:
-- LED 1 -> Pin 2
-- LED 2 -> Pin 3
-- LED 3 -> Pin 4
-- LED 4 -> Pin 5
-- LED 5 -> Pin 6
-- LED 6 -> Pin 7
+LED'ler tersten şu pinlere bağlanmalıdır:
+- LED 1 -> Pin 8
+- LED 2 -> Pin 7
+- LED 3 -> Pin 6
+- LED 4 -> Pin 4
+- LED 5 -> Pin 3
+- LED 6 -> Pin 2
 
 Her LED'in uzun bacağı (anot) Arduino pinine, kısa bacağı (katot) 220 ohm direnç üzerinden GND'ye bağlanmalıdır.
 

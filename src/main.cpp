@@ -1,7 +1,7 @@
 #include <Arduino.h>
 
 // LED pinleri
-const int ledPins[] = {2, 3, 4, 5, 6, 7};  // Sıralı LED pinleri
+const int ledPins[] = {8, 7, 6, 4, 3, 2};  // Tersten bağlı LED pinleri
 const int ledCount = 6;  // LED sayısı
 
 // PWM değerleri
@@ -9,17 +9,20 @@ const int brightnessLevels[] = {0, 64, 128, 192, 255};  // Daha az seviye, daha 
 const int levelCount = 5;
 
 // Polis efekti için LED grupları
-const int group1[] = {0, 2, 4};  // İlk grup LED'ler (2, 4, 6 pinleri)
-const int group2[] = {1, 3, 5};  // İkinci grup LED'ler (3, 5, 7 pinleri)
+const int group1[] = {0, 2, 4};  // İlk grup LED'ler (8, 6, 3 pinleri)
+const int group2[] = {1, 3, 5};  // İkinci grup LED'ler (7, 4, 2 pinleri)
 const int groupSize = 3;  // Her gruptaki LED sayısı
+
+const int testLedPin = 2;  // Test edilecek LED pini
 
 void setup() {
   // Tüm LED pinlerini çıkış olarak ayarla
   for(int i = 0; i < ledCount; i++) {
     pinMode(ledPins[i], OUTPUT);
   }
+  pinMode(testLedPin, OUTPUT);   // LED pinini çıkış olarak ayarla
   Serial.begin(9600);
-  Serial.println("LED Dans Efekti Başladı!");
+  Serial.println("LED Testi Başladı!");
 }
 
 // Hızlı soluklaşma efekti
@@ -132,6 +135,16 @@ void policeEffect() {
 }
 
 void loop() {
+  // LED'i yak
+  digitalWrite(testLedPin, HIGH);
+  Serial.println("LED YANIK");
+  delay(1000);  // 1 saniye bekle
+  
+  // LED'i söndür
+  digitalWrite(testLedPin, LOW);
+  Serial.println("LED SÖNÜK");
+  delay(1000);  // 1 saniye bekle
+
   // Hızlı dalga efekti
   for(int i = 0; i < ledCount; i++) {
     quickFade(ledPins[i], 0, 255);
