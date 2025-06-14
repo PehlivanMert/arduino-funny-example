@@ -1,7 +1,7 @@
 #include <Arduino.h>
 
 // LED pinleri
-const int ledPins[] = {6, 8, 2, 3, 4, 7};  // Güncellenmiş LED pinleri
+const int ledPins[] = {2, 3, 4, 5, 6, 7};  // Sıralı LED pinleri
 const int ledCount = 6;  // LED sayısı
 
 // PWM değerleri
@@ -9,8 +9,8 @@ const int brightnessLevels[] = {0, 64, 128, 192, 255};  // Daha az seviye, daha 
 const int levelCount = 5;
 
 // Polis efekti için LED grupları
-const int group1[] = {0, 2, 4};  // İlk grup LED'ler (6, 2, 4 pinleri)
-const int group2[] = {1, 3, 5};  // İkinci grup LED'ler (8, 3, 7 pinleri)
+const int group1[] = {0, 2, 4};  // İlk grup LED'ler (2, 4, 6 pinleri)
+const int group2[] = {1, 3, 5};  // İkinci grup LED'ler (3, 5, 7 pinleri)
 const int groupSize = 3;  // Her gruptaki LED sayısı
 
 void setup() {
